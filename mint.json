@@ -25,7 +25,8 @@
     "title": "Beyond API Documentation",
     "description": "Documentation for the Beyond API",
     "type": "website",
-    "logo": "/logo/light.svg"
+    "logo": "/logo/light.svg",
+    "siteName": "Beyond API"
   },
   "topbarLinks": [
     {

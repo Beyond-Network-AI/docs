@@ -1,32 +1,44 @@
-# Mintlify Starter Kit
+# Beyond API Documentation
 
-Click on `Use this template` to copy the Mintlify starter kit. The starter kit contains examples including
+Welcome to the Beyond API documentation repository. This documentation provides comprehensive guides and references for integrating with the Beyond API.
 
-- Guide pages
-- Navigation
-- Customizations
-- API Reference pages
-- Use of popular components
+## Documentation Structure
 
-### Development
+The documentation includes:
 
-Install the [Mintlify CLI](https://www.npmjs.com/package/mintlify) to preview the documentation changes locally. To install, use the following command
+- Getting Started guides
+- API Reference
+- Authentication guides
+- Best practices
+- Error handling
+- Support information
 
-```
+## Development
+
+To run this documentation locally:
+
+1. Install the Mintlify CLI:
+
+```bash
 npm i -g mintlify
 ```
 
-Run the following command at the root of your documentation (where mint.json is)
+2. Run the development server:
 
-```
+```bash
 mintlify dev
 ```
 
-### Publishing Changes
+## Documentation Updates
 
-Install our Github App to auto propagate changes from your repo to your deployment. Changes will be deployed to production automatically after pushing to the default branch. Find the link to install on your dashboard. 
+The documentation is automatically deployed when changes are pushed to the main branch.
 
-#### Troubleshooting
+## Support
 
-- Mintlify dev isn't running - Run `mintlify install` it'll re-install dependencies.
-- Page loads as a 404 - Make sure you are running in a folder with `mint.json`
+For any questions or issues:
+- Email: contact@beyondnetwork.xyz
+- Website: https://www.beyondnetwork.xyz
+
+## License
+
+See the [license page](license.md) for more information.
