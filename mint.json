@@ -2,8 +2,8 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Beyond API",
   "logo": {
-    "light": "/images/hero.png",
-    "dark": "/images/hero.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
   "favicon": "/favicon.svg",
   "theme": "prism",
@@ -11,6 +11,9 @@
     "primary": "#C4FF1F",
     "light": "#D4FF52",
     "dark": "#9ECC19"
+  },
+  "openGraph": {
+    "image": "/images/hero.png"
   },
   "topbarLinks": [
     {
