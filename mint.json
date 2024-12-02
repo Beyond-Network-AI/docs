@@ -2,25 +2,16 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Beyond API",
   "logo": {
-    "light": "/logo/light.png",
-    "dark": "/logo/dark.png"
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/favicon.svg",
+  "theme": "prism",
   "colors": {
-    "primary": "#0D9373",
-    "light": "#07C983",
-    "dark": "#0D9373"
+    "primary": "#AADB1E",
+    "light": "#C7FF37",
+    "dark": "#739416"
   },
-  "tabs": [
-    {
-      "name": "Documentation",
-      "url": "introduction"
-    },
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
   "topbarLinks": [
     {
       "name": "Support",
@@ -32,11 +23,6 @@
     "url": "https://www.beyondnetwork.xyz"
   },
   "anchors": [
-    {
-      "name": "API Reference",
-      "icon": "rectangle-terminal",
-      "url": "api-reference"
-    },
     {
       "name": "Support",
       "icon": "messages",
@@ -66,8 +52,7 @@
       ]
     },
     {
-      "group": "API Reference",
-      "icon": "rectangle-terminal",
+      "group": "API Endpoints",
       "pages": [
         "api-reference/index",
         "api-reference/chat-completions",
