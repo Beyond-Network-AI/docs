@@ -1,0 +1,50 @@
+---
+title: 'Content-Type Requirements'
+description: 'Learn about the required content types for API requests'
+icon: 'code'
+---
+
+## Content-Type Header
+
+Set the `Content-Type` header to `application/json` for all requests to ensure the server correctly interprets the request payload.
+
+```http
+Content-Type: application/json
+```
+
+### Why It's Required
+
+- Ensures proper parsing of request bodies
+- Enables correct interpretation of JSON payloads
+- Prevents data format mismatches
+
+### Request Examples
+
+#### Correct Usage
+
+```http
+POST /api/chat/completions
+Content-Type: application/json
+
+{
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello!"
+    }
+  ]
+}
+```
+
+#### Common Errors
+
+If the Content-Type header is missing or incorrect, you'll receive a `400 Bad Request` response:
+
+```json
+{
+  "error": {
+    "message": "Content-Type must be application/json",
+    "code": 400
+  }
+}
+``` 

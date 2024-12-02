@@ -1,0 +1,14 @@
+{
+  "api": {
+    "baseUrl": "https://dev.beyondnetwork.xyz"
+  },
+  "navigation": [
+    {
+      "group": "Endpoints",
+      "pages": [
+        "chat-completions",
+        "image-generation"
+      ]
+    }
+  ]
+} 

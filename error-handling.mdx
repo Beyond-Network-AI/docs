@@ -1,0 +1,76 @@
+---
+title: 'Error Handling'
+description: 'Learn how to handle API errors and responses'
+icon: 'triangle-exclamation'
+---
+
+All error responses follow a consistent JSON structure to facilitate error handling and debugging.
+
+## Error Response Format
+
+### Standard Error Response
+
+All API errors return a JSON object with a consistent structure:
+
+```json
+{
+  "error": {
+    "message": "Error description",
+    "code": 400
+  }
+}
+```
+
+- **message:** A brief description of the error
+- **code:** HTTP status code corresponding to the error
+
+### Detailed Error Response (Development Mode)
+
+In development mode, additional fields are included to aid in debugging:
+
+```json
+{
+  "error": {
+    "message": "Error description",
+    "code": 400,
+    "detail": "Detailed error message",
+    "stack": "Error stack trace"
+  }
+}
+```
+
+- **detail:** A more comprehensive explanation of the error
+- **stack:** The stack trace of the error, useful for developers to trace the source of the issue
+
+<Note>
+Ensure that detailed error information is not exposed in production environments to maintain security and privacy.
+</Note>
+
+## Common Error Codes
+
+- **400 Bad Request:** Invalid request format or missing required fields
+- **401 Unauthorized:** Missing API key
+- **403 Forbidden:** Invalid API key
+- **404 Not Found:** Resource not found
+- **429 Too Many Requests:** Rate limit exceeded
+- **500 Internal Server Error:** Unexpected server error
+
+## Error Handling Best Practices
+
+1. **Implement Proper Error Catching**
+   - Always wrap API calls in try-catch blocks
+   - Handle both network and API errors appropriately
+
+2. **Rate Limit Handling**
+   - Implement exponential backoff for 429 errors
+   - Monitor rate limit headers to prevent hitting limits
+
+3. **Logging and Monitoring**
+   - Log errors for debugging and monitoring
+   - Set up alerts for critical errors
+   - Track error rates and patterns
+
+4. **User Experience**
+   - Provide clear error messages to end users
+   - Implement graceful fallbacks when possible
+   - Include support contact information for critical errors

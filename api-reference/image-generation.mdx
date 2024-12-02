@@ -1,0 +1,122 @@
+---
+title: 'Image Generation'
+description: 'Learn how to use the image generation endpoint'
+icon: 'image'
+---
+
+Generate high-quality images using our AI models.
+
+## Endpoint Details
+
+<ParamField path="/api/images/generate" method="POST">
+  Generate an image from a text prompt
+</ParamField>
+
+## Request Format
+
+### Headers
+
+<ResponseField name="Content-Type" type="string" required>
+  Must be set to `application/json`
+</ResponseField>
+
+<ResponseField name="x-api-key" type="string" required>
+  Your API key
+</ResponseField>
+
+### Body Parameters
+
+<ResponseField name="prompt" type="string" required>
+  The text description of the image you want to generate
+</ResponseField>
+
+<ResponseField name="model" type="string" optional>
+  The model to use for generation. Defaults to `black-forest-labs/FLUX.1-schnell`
+</ResponseField>
+
+<ResponseField name="options" type="object" optional>
+  Additional generation options
+  <Expandable title="options">
+    <ResponseField name="steps" type="number" default="4">
+      Number of inference steps
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Example Request
+
+```json
+{
+  "prompt": "Your image description",
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "options": {
+    "steps": 4
+  }
+}
+```
+
+## Response Format
+
+```json
+{
+  "url": "/api/images/filename.jpg",
+  "data": [
+    {
+      "url": "/api/images/filename.jpg",
+      "index": 0
+    }
+  ],
+  "model": "black-forest-labs/FLUX.1-schnell",
+  "timings": {}
+}
+```
+
+## Image Serving
+
+### Endpoint
+
+<ParamField path="/api/images/:filename" method="GET">
+  Retrieve a generated image
+</ParamField>
+
+- No authentication required
+- Returns the image file directly
+- Images are available immediately after generation
+
+## Caching
+
+- Generated images are cached for 1 hour
+- Cache key is based on prompt, model, and options
+- Images are stored locally and served via public endpoint
+
+## Error Scenarios
+
+- **400**: Missing or invalid prompt
+- **401**: Missing API key
+- **403**: Invalid API key
+- **404**: Image not found (for serving endpoint)
+- **429**: Rate limit exceeded
+- **500**: Internal server error
+
+### Error Response Example
+
+```json
+{
+  "error": {
+    "message": "Error description",
+    "code": 400
+  }
+}
+```
+
+In development mode, you'll receive additional error details:
+
+```json
+{
+  "error": {
+    "message": "Error description",
+    "code": 400,
+    "detail": "Detailed error message",
+    "stack": "Error stack trace"
+  }
+} 

@@ -1,0 +1,55 @@
+---
+title: 'Rate Limits'
+description: 'Understanding API rate limits and quotas'
+icon: 'gauge-high'
+---
+
+To ensure fair usage and maintain service quality, the Beyond API implements rate limiting on all endpoints.
+
+## Current Limits
+
+### Free Tier
+- **Limit**: 100 requests per 15-minute window
+- **Scope**: Applied per API key or IP address
+- **Reset**: Limits automatically reset after the 15-minute window
+
+## Rate Limit Headers
+
+Rate limit information is included in the response headers:
+
+```http
+X-RateLimit-Limit: 100
+X-RateLimit-Remaining: 95
+X-RateLimit-Reset: 1640995200
+```
+
+- `X-RateLimit-Limit`: Total requests allowed in the window
+- `X-RateLimit-Remaining`: Remaining requests in current window
+- `X-RateLimit-Reset`: Unix timestamp when the rate limit resets
+
+## Rate Limit Exceeded
+
+When you exceed the rate limit, you'll receive a 429 Too Many Requests response:
+
+```json
+{
+  "error": {
+    "message": "Rate limit exceeded. Please try again later.",
+    "code": 429
+  }
+}
+```
+
+## Best Practices
+
+- Implement retry logic with exponential backoff
+- Monitor your usage through rate limit headers
+- Cache responses when possible to reduce API calls
+- Consider request batching for bulk operations
+
+## Coming Soon
+
+A paid tier with USDC payments is in development, which will offer:
+- Higher rate limits
+- Priority access
+- Additional features

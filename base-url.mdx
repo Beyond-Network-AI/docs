@@ -1,0 +1,27 @@
+---
+title: 'Base URL'
+description: 'Learn about the Beyond API base URL'
+icon: 'link'
+---
+
+## Base URL
+
+All API requests should be directed to the following base URL:
+
+```http
+https://dev.beyondnetwork.xyz/
+```
+
+### Usage
+
+When making requests to any endpoint, prefix the endpoint path with this base URL.
+
+For example:
+- Chat Completions: `https://dev.beyondnetwork.xyz/api/chat/completions`
+- Image Generation: `https://dev.beyondnetwork.xyz/api/images/generate`
+
+### Environment Considerations
+
+- **Development:** The base URL remains the same for both development and production use
+- **HTTPS Required:** All requests must use HTTPS for security
+- **Regional Endpoints:** Currently, a single global endpoint serves all regions 

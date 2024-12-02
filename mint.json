@@ -1,91 +1,91 @@
 {
   "$schema": "https://mintlify.com/schema.json",
-  "name": "Starter Kit",
+  "name": "Beyond API",
   "logo": {
-    "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png"
   },
-  "favicon": "/favicon.svg",
+  "favicon": "/favicon.png",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
-    "dark": "#0D9373",
-    "anchors": {
-      "from": "#0D9373",
-      "to": "#07C983"
-    }
-  },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
-  "topbarCtaButton": {
-    "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "dark": "#0D9373"
   },
   "tabs": [
+    {
+      "name": "Documentation",
+      "url": "introduction"
+    },
     {
       "name": "API Reference",
       "url": "api-reference"
     }
   ],
+  "topbarLinks": [
+    {
+      "name": "Support",
+      "url": "mailto:contact@beyondnetwork.xyz"
+    }
+  ],
+  "topbarCtaButton": {
+    "name": "Dashboard",
+    "url": "https://www.beyondnetwork.xyz"
+  },
   "anchors": [
     {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
+      "name": "API Reference",
+      "icon": "rectangle-terminal",
+      "url": "api-reference"
     },
     {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
+      "name": "Support",
+      "icon": "messages",
+      "url": "support"
     },
     {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
+      "name": "Changelog",
+      "icon": "list",
+      "url": "changelog"
     }
   ],
   "navigation": [
     {
-      "group": "Get Started",
+      "group": "Getting Started",
       "pages": [
         "introduction",
-        "quickstart",
-        "development"
+        {
+          "group": "General Information",
+          "icon": "circle-info",
+          "pages": [
+            "base-url",
+            "content-type",
+            "rate-limits"
+          ]
+        },
+        "authentication"
       ]
     },
     {
-      "group": "Essentials",
+      "group": "API Reference",
+      "icon": "rectangle-terminal",
       "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation",
-        "essentials/reusable-snippets"
+        "api-reference/index",
+        "api-reference/chat-completions",
+        "api-reference/image-generation"
       ]
     },
     {
-      "group": "API Documentation",
+      "group": "Resources",
       "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
+        "error-handling",
+        "best-practices",
+        "support",
+        "changelog",
+        "license"
       ]
     }
   ],
   "footerSocials": {
-    "x": "https://x.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://linkedin.com/company/mintlify"
+    "website": "https://www.beyondnetwork.xyz"
   }
 }

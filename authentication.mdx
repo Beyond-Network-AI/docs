@@ -1,0 +1,46 @@
+---
+title: 'Authentication'
+description: 'Learn how to authenticate your API requests'
+icon: 'key'
+---
+
+The Beyond API uses API keys to authenticate requests. You need to include your API key in all API requests to our server.
+
+## <Icon icon="lock" iconType="solid" /> API Key Header
+
+Include your API key in the request headers using:
+
+```http
+x-api-key: your-api-key
+```
+
+## <Icon icon="user-plus" iconType="solid" /> Obtaining an API Key
+
+1. Create an account at [www.beyondnetwork.xyz](https://www.beyondnetwork.xyz)
+2. Send an email to contact@beyondnetwork.xyz with your registered email address
+3. You will receive your API key via email
+
+## <Icon icon="shield" iconType="solid" /> Security Best Practices
+
+- Keep your API key secure and confidential
+- Never expose your API key in client-side code or public repositories
+- Use environment variables to store your API key
+- Rotate your API key if you suspect it has been compromised
+
+## <Icon icon="triangle-exclamation" iconType="solid" /> Error Responses
+
+If authentication fails, you may receive one of these errors:
+
+- **401 Unauthorized**: Missing API key
+- **403 Forbidden**: Invalid API key
+
+Example error response:
+
+```json
+{
+  "error": {
+    "message": "Missing API key in request headers",
+    "code": 401
+  }
+}
+```

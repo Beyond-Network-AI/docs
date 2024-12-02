@@ -1,0 +1,107 @@
+---
+title: 'Chat Completions'
+description: 'Learn how to use the chat completions endpoint'
+icon: 'message-bot'
+---
+
+Generate conversational responses using our AI models.
+
+## Endpoint Details
+
+<ParamField path="/api/chat/completions" method="POST">
+  Generate a chat completion from a conversation
+</ParamField>
+
+## Request Format
+
+### Headers
+
+<ResponseField name="Content-Type" type="string" required>
+  Must be set to `application/json`
+</ResponseField>
+
+<ResponseField name="x-api-key" type="string" required>
+  Your API key
+</ResponseField>
+
+### Body Parameters
+
+<ResponseField name="model" type="string" optional>
+  The model to use for completion. Defaults to `meta-llama/Meta-Llama-3-8B-Instruct-Turbo`
+</ResponseField>
+
+<ResponseField name="messages" type="array" required>
+  Array of messages in the conversation
+  <Expandable title="messages">
+    <ResponseField name="role" type="string" required>
+      The role of the message sender (user, assistant, or system)
+    </ResponseField>
+    <ResponseField name="content" type="string" required>
+      The content of the message
+    </ResponseField>
+  </Expandable>
+</ResponseField>
+
+### Example Request
+
+```json
+{
+  "model": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Hello!"
+    }
+  ]
+}
+```
+
+## Response Format
+
+```json
+{
+  "id": "cmpl-123abc",
+  "object": "chat.completion",
+  "created": 1677649420,
+  "model": "meta-llama/Meta-Llama-3-8B-Instruct-Turbo",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "Hello! How can I help you today?"
+      }
+    }
+  ]
+}
+```
+
+## Model Parameters
+
+- **Maximum Output Tokens**: 725
+- **Temperature**: 0.7
+- **Top P**: 0.9
+
+## Caching
+
+- Responses are cached for 1 hour
+- Cache key is based on model and messages content
+- Cached responses are served instantly
+
+## Error Scenarios
+
+- **400**: Invalid request format or empty messages array
+- **401**: Missing API key
+- **403**: Invalid API key
+- **429**: Rate limit exceeded
+- **500**: Internal server error
+
+### Error Response Example
+
+```json
+{
+  "error": {
+    "message": "Error description",
+    "code": 400
+  }
+}
