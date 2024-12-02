@@ -2,15 +2,15 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Beyond API",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/images/hero.png",
+    "dark": "/images/hero.png"
   },
   "favicon": "/favicon.svg",
   "theme": "prism",
   "colors": {
-    "primary": "#AADB1E",
-    "light": "#C7FF37",
-    "dark": "#739416"
+    "primary": "#C4FF1F",
+    "light": "#D4FF52",
+    "dark": "#9ECC19"
   },
   "topbarLinks": [
     {
