@@ -24,7 +24,8 @@
     "image": "/images/hero.png",
     "title": "Beyond API Documentation",
     "description": "Documentation for the Beyond API",
-    "type": "website"
+    "type": "website",
+    "logo": "/logo/light.svg"
   },
   "topbarLinks": [
     {
