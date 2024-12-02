@@ -8,9 +8,17 @@
   "favicon": "/favicon.svg",
   "theme": "prism",
   "colors": {
-    "primary": "#C4FF1F",
-    "light": "#D4FF52",
-    "dark": "#9ECC19"
+    "primary": "#000000",
+    "light": "#C4FF1F",
+    "dark": "#000000",
+    "anchors": {
+      "from": "#C4FF1F",
+      "to": "#000000"
+    },
+    "background": {
+      "dark": "#000000",
+      "light": "#FFFFFF"
+    }
   },
   "openGraph": {
     "image": "/images/hero.png"
