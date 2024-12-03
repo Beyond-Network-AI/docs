@@ -4,7 +4,7 @@ Welcome to the Beyond API documentation repository. This documentation provides 
 
 ## Documentation Structure
 
-The documentation includes:
+The documentation includes: 
 
 - Getting Started guides
 - API Reference
